@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Outfit:wght@400;700&display=swap');
+
+:root {
+  --line-border-fill-color: rgb(35, 216, 77);
+  --line-border-empty-color: rgb(218, 216, 216);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 20%;
+
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* we make position relative when we want to adjust content with respect to the parent container which should be absolute*/
+
+
+
+}
+
+/* See this link for more understanding of ::before
+https://developer.mozilla.org/en-US/docs/Web/CSS/::before#:~:text=%3C/span%3E-,CSS,-CSS
+
+*/
+
+/* before basically adds a (like a div)/child of the parent element  */
+.progress-container::before {
+  content: '';
+  /* we have to set content:' ' to display before elemetn*/
+  background-color: var(--line-border-empty-color);
+  position: absolute;
+  /* absolute gives us chance to move the element wrt screen */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /* to move along the vertical axis */
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transition: 1s ease;
+}
+
+.progress {
+
+  background-color: var(--line-border-fill-color);
+  position: absolute;
+  /* absolute gives us chance to move the element wrt screen */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /* to move along the vertical axis */
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 1s ease;
+}
+
+
+.circle {
+
+  background-color: white;
+  color: var(--line-border-empty-color);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--line-border-empty-color);
+  padding: 7%;
+  transition: 0.5s ease;
+}
+
+.circle.active {
+
+  border-color: var(--line-border-fill-color);
+
+
+}
+
+
+.btn {
+  background-color: var(--line-border-fill-color);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 20px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+/* For pseudo selectors:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#user_action_pseudo-classes
+
+*/
+.btn:active {
+  transform: scale(0.95);
+
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty-color);
+  cursor: not-allowed;
+}

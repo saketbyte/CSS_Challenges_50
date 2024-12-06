@@ -1,0 +1,48 @@
+###CSS Explanation
+#### 1. Adding the Glass Effect
+The glass effect gives a frosted or blurred appearance, resembling frosted glass. It involves layering colors, using transparency, and applying a blur filter. The following properties contribute to this effect:
+
+background:
+
+The background property is set with a transparent color using rgba (red, green, blue, alpha). For example, rgba(106, 233, 45, 0.21) means the greenish background has 21% opacity (alpha value). This semi-transparency allows elements behind to be partially visible.
+box-shadow:
+
+Creates a soft shadow around the element. The syntax is box-shadow: offsetX offsetY blur-radius color;.
+Example: box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); adds a subtle shadow with 10% opacity.
+backdrop-filter and -webkit-backdrop-filter:
+
+Applies a blur effect to the background of the element. The value blur(2.8px) determines the intensity of the blur.
+-webkit-backdrop-filter ensures compatibility with WebKit browsers (e.g., Safari).
+border:
+
+The border adds definition to the glass pane. A semi-transparent border like border: 1px solid rgba(105, 233, 45, 0.11); enhances the frosted look.
+These properties together make the .container and .circle elements appear like frosted glass.
+
+#### 2. Adding the Animation Aspect
+The animations in the file primarily involve rotation and smooth transformations. Here’s how they work:
+
+transform:
+
+Used for 2D and 3D transformations like rotation, scaling, or translation.
+Example: transform: rotate(-20deg); rotates the element 20 degrees counterclockwise.
+transform-origin: top left; sets the pivot point for the transformation at the top-left corner.
+transition:
+
+Adds smoothness to property changes, such as rotation or translation. Syntax: transition: property duration timing-function delay;.
+Example: transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);.
+transform: The property to transition.
+0.5s: Duration of the transition (half a second).
+cubic-bezier: Custom timing function defining the speed curve.
+transition-delay:
+
+Adds a delay before the animation starts. Syntax: transition-delay: time;.
+Example: transition-delay: 0.3s; delays the transformation by 0.3 seconds.
+Animation in .container.show-nav:
+
+Adding the .show-nav class triggers rotation: transform: rotate(-20deg);.
+The .circle element rotates further with transform: rotate(-70deg);.
+Sliding Effect on Navigation Links:
+
+transform: translateX(-150%); initially places the links off-screen.
+Adding the .show-nav class changes the position with transform: translateX(0);.
+The transition is smooth due to transition: transform 0.4s ease-in;.

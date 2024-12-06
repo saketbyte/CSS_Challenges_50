@@ -1,0 +1,13 @@
+@import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.active {
+
+    @apply text-yellow-700 bg-white/30;
+}

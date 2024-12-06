@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="/dist/output.css" rel="stylesheet" type="text/css" />
+		<!-- defer to load after the HTML Document. -->
+		<script defer src="../assets/fontawesome/js/fontawesome.min.js"></script>
+		<script defer src="../assets/fontawesome/js/solid.min.js"></script>
+	</head>
+	<body>
+		<main>
+			<header>
+				<nav class="sticky flex top-0 bg-yellow-400">
+					<div class="flex items-center gap-2 p-1.5">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Vincent_Van_Gogh_Signature.svg" width="225" />
+					</div>
+					<!-- Added the second div to avoid the empty space alongisde logo -->
+					<div class="flex-1 flex items-center justify-end">
+						<!-- Menu Item Div -->
+
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/20 transition-colors duration-700 ease-in-out">Home</div>
+						<!-- relative: because I need the drop down absolute wrt the menu items
+							 flex : to center align h and v
+							 h-full: to occupy entire height
+							 items-center: to align vertically
+							 p-4 : 1rem padding
+							 hover properties.
+							 transition-colors : adds a transition to all color related fields.-->
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/50 transition-colors duration-500 ease-in-out">Paintings</div>
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/50 transition-colors duration-500 ease-in-out">Letters</div>
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/50 transition-colors duration-500 ease-in-out">Museums</div>
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/50 transition-colors duration-500 ease-in-out">Shows</div>
+						<div class="menu-item relative cursor-pointer flex h-full items-center p-4 font-bold text-yellow-900 hover:text-yellow-700 hover:bg-white/50 transition-colors duration-500 ease-in-out">Contact</div>
+					</div>
+				</nav>
+			</header>
+		</main>
+	</body>
+</html>

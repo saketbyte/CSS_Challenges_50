@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mooli&family=Outfit:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* layer directive is tailwind css property to target one of the above three layers.
+This is an organisation method. */
+@layer base {
+	html {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 400;
+	}
+}

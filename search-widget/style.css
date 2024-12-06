@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', sans-serif;
+  background-image: linear-gradient(45deg, violet, purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search {
+  position: relative;
+  /* height: 75px; */
+}
+
+.search .input {
+
+  background-color: white;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  height: 45px;
+  width: 45px;
+  transition: width 0.5s ease;
+}
+
+.btn {
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  left: 0%;
+  right: 0;
+  height: 45px;
+  width: 45px;
+  transition: transform 0.5s ease;
+}
+
+
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+
+.search.active .input {
+  width: 200px;
+}
+
+.search.active .btn {
+  transform: translateX(198px);
+}

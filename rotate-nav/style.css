@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffffd8;
+  color: #000000;
+  align-items: center;
+  /* overflow-x: hidden; */
+  height: 80%;
+  width: 80%;
+}
+
+/* Glass effect: Frosted glass look using transparency, blur, and shadows */
+.container {
+  margin: 16px;
+  /* This is the pivot from where it rotates */
+  transform-origin: top left;
+  /* Pivot point for rotation */
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* Smooth rotation */
+  width: 100vw;
+  min-height: 80vh;
+  padding: 50px;
+
+  /* Glass effect properties */
+  background: rgba(106, 233, 45, 0.21);
+  /* Transparent background */
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
+  backdrop-filter: blur(2.8px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(2.8px);
+  /* Blur for WebKit browsers */
+  border: 1px solid rgba(105, 233, 45, 0.11);
+  /* Semi-transparent border */
+}
+
+/* Animation: Smooth rotation of container and navigation links */
+.container.show-nav {
+  transform: rotate(-20deg);
+  /* Rotate container */
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+  /* Rotate circle further */
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+  /* Smooth circle rotation */
+
+  /* Glass effect properties */
+  background: rgba(255, 255, 255, 0.77);
+  /* Transparent background */
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
+  backdrop-filter: blur(10px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* Blur for WebKit browsers */
+  border: 1px solid rgb(104, 98, 98);
+  /* Border for definition */
+}
+
+.circle button {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #000000;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  /* Pivot point for close button rotation */
+}
+
+/* Sliding effect for navigation links */
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  z-index: 100;
+}
+
+nav ul {
+  /* To remove bullets */
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  margin: 25px 0;
+
+  /* Initial off-screen position for sliding effect */
+  transform: translateX(-150%);
+  transition: transform 0.4s ease-in;
+  /* Smooth entry */
+}
+
+.container.show-nav+nav li {
+  transform: translateX(0);
+  /* Bring links into view */
+  transition-delay: 0.3s;
+  /* Delayed start for smoothness */
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+.content img {
+  max-height: 80vh;
+  border-radius: 40px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
